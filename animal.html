@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Response</title>
+ </head>
+<body>
+
+<h2> Animal game by Yashaswini</h2>
+
+<form id="Animal_form">
+    <label for="Hidden_Animal ">The hidden animal type</label>
+    <input type="password" id="Animal_form" value="Chicken"><br>
+    <br>
+    <label for="guessanimal">Guess the animal </label>
+    <input type="text" id="guessanimal"><br>
+    <br>
+    <input type="button" onclick="checkAnimal()" value="Check the guess">
+</form>
+
+<p id="outcome"></p>
+
+<script> 
+
+    let wrong=0;
+    let correct=0;
+function checkAnimal(){
+    console.log("The hidden animal type")
+    Hidden_Animal = document.getElementById("Hidden_Animal").value;
+    guessanimal = document.getElementById("guessanimal").value;
+    if (Hidden_Animal.toLowerCase() === guessanimal.toLowerCase()) {
+            correct++;
+            alert("Ruff ruff");
+        } else {
+            wrong++;
+            alert("Grrrr");
+        }
+
+        document.getElementById("outcome").innerHTML = `Correct: ${correct}, Wrong: ${wrong}`;
+    }
+</script>
+</body>
+</html> 
