@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Trip</title>
+     </head>
+<body>
+<h2>Yashaswini packs for a trip</h2>
+
+<form id="packing_Form">
+    <label for="light">Pack light</label>
+    <input type="checkbox" id="light" value="True">
+  
+    <label for="carry">Carry on</label>
+    <input type="checkbox" id="carry" value="True">
+  
+    <label for="tablet">Tablet</label>
+    <input type="checkbox" id="tablet" value="False">
+</form>
+<button onclick="selectPack()">Select for packing</button>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+let my_pack = {};
+
+function selectPack(){
+    my_pack = {};
+    my_pack.light = document.getElementById('light').checked;
+    my_pack.carry = document.getElementById('carry').checked;
+    my_pack.tablet = document.getElementById('tablet').checked;
+    document.getElementById('result').innerHTML = JSON.stringify(my_pack);
+}
+    
+</script>
+
+</body>
+</html> 
