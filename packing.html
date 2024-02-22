@@ -17,9 +17,17 @@
     <input type="checkbox" id="tablet" value="False">
 </form>
 <button onclick="selectPack()">Select for packing</button>
+<p id="result"></p>
 
-
-<p id="result">This text will be replaced </p>
+<form>
+    <label for="travelMonth">Enter travel month</label>
+    <input type="text" id="travelMonth" name="travelMonth" value="May"><br>
+    <label for="price">Enter price</label>
+    <input type="text" id="price" name="price"><br>
+    
+</form>
+<button type="button" onclick="updatePack()">Update the pack</button>
+<p id="output">This text will be replaced </p>
 
 <script> 
 let my_pack = {};
@@ -32,6 +40,17 @@ function selectPack(){
     document.getElementById('result').innerHTML = JSON.stringify(my_pack);
 }
     
+</script>
+
+<script>
+    function updatePack() {
+        const travelMonth= document.getElementById('travelMonth').value;
+        const price = document.getElementById('price').value;
+-           console.log(travelMonth+" "+price);
+        my_pack["travelMonth"] = travelMonth;
+        my_pack["price"] = price;
+        document.getElementById('output').innerHTML = JSON.stringify(my_pack);
+    }
 </script>
 
 </body>
